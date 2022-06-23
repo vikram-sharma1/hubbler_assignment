@@ -37,7 +37,7 @@ function App() {
   // rule part
   const addRule=(e)=>{
     e.preventDefault()
-      axios.post("http://localhost:8080/ruleArray",rule).then(()=>{
+      axios.post("https://rule-head.herokuapp.com/ruleArray",rule).then(()=>{
       setRule({
         "name":name,
       })
@@ -52,7 +52,7 @@ function App() {
   },[])
 
     const getData=()=>{
-      axios.get("http://localhost:8080/ruleArray").then((res)=>{
+      axios.get("https://rule-head.herokuapp.com/ruleArray").then((res)=>{
       setData(res.data)
       setNum(res.data.length)
       if(res.data.length>=5){
@@ -73,7 +73,7 @@ function App() {
 
   const addAction=()=>{
     // el.preventDefault()
-      axios.post("http://localhost:8080/actionArray",action).then(()=>{
+      axios.post("https://rule-head.herokuapp.com/actionArray",action).then(()=>{
       setAction({
         "action":"START NEW APP",
       })
@@ -89,7 +89,7 @@ function App() {
   },[])
 
   const getActionData=()=>{
-    axios.get("http://localhost:8080/actionArray").then((res)=>{
+    axios.get("https://rule-head.herokuapp.com/actionArray").then((res)=>{
       setActionData(res.data)
       setActionNum(res.data.length)
       // console.log("action")
@@ -117,7 +117,7 @@ function App() {
   }
 
   const handleSubmit=(e)=>{
-    const response = axios.patch(`http://localhost:8080/ruleArray/${ruleId}`, { name: input }).then(()=>{
+    const response = axios.patch(`https://rule-head.herokuapp.com/ruleArray/${ruleId}`, { name: input }).then(()=>{
       console.log(response.name)
       console.log(ruleId+"ruleId")
       // getData()
@@ -137,7 +137,7 @@ function App() {
 
   const handleConditionSubmit=(e)=>{
     e.preventDefault()
-    axios.post("http://localhost:8080/conditionArray",condition).then(()=>{
+    axios.post("https://rule-head.herokuapp.com/conditionArray",condition).then(()=>{
       setCondition({
         "condition":""
       })
@@ -148,7 +148,7 @@ function App() {
   }
 
   const getCondition=()=>{
-    axios.get("http://localhost:8080/conditionArray").then((res)=>{
+    axios.get("https://rule-head.herokuapp.com/conditionArray").then((res)=>{
       setStoreCondition(res.data)
       setNum(res.data.length)
       if(res.data.length>=8){
@@ -235,7 +235,7 @@ function App() {
              <img
              style={{display:show}}
              onClick={()=>{
-              axios.delete(`http://localhost:8080/ruleArray/${e.id}`).then(res=>{
+              axios.delete(`https://rule-head.herokuapp.com/ruleArray/${e.id}`).then(res=>{
               getData();
               })
           }}
@@ -289,7 +289,7 @@ function App() {
           <p id="cross"
           style={{display:show}}
           onClick={()=>{
-            axios.delete(`http://localhost:8080/conditionArray/${con.id}`).then(res=>{
+            axios.delete(`https://rule-head.herokuapp.com/conditionArray/${con.id}`).then(res=>{
             getCondition();
             })
         }}
@@ -313,7 +313,7 @@ function App() {
         <img id="deleteIcon"
         style={{display:show}}
              onClick={()=>{
-              axios.delete(`http://localhost:8080/actionArray/${index.id}`).then(res=>{
+              axios.delete(`https://rule-head.herokuapp.com/actionArray/${index.id}`).then(res=>{
               getActionData();
               })
           }}
