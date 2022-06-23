@@ -1,0 +1,44 @@
+{
+  "ruleArray": [
+    {
+      "name": "Assessment",
+      "id": 7
+    },
+    {
+      "name": "Default Rule",
+      "id": 9
+    },
+    {
+      "name": "Default Rule",
+      "id": 10
+    }
+  ],
+  "actionArray": [
+    {
+      "action": "START NEW APP",
+      "id": 14
+    },
+    {
+      "action": "START NEW APP",
+      "id": 16
+    },
+    {
+      "action": "START NEW APP",
+      "id": 17
+    }
+  ],
+  "conditionArray": [
+    {
+      "condition": "take overview",
+      "id": 3
+    },
+    {
+      "condition": "take assessment",
+      "id": 4
+    },
+    {
+      "condition": "urgent",
+      "id": 5
+    }
+  ]
+}
